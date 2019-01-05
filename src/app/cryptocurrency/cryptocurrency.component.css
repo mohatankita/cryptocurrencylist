@@ -1,0 +1,72 @@
+table {
+    text-align: center;
+}
+
+h4 {
+    text-align: center;
+    color: #dd1c1a;
+    font-weight: bold;
+}
+
+.my-pagination {
+    text-align: center;
+}
+
+table tr:last-child {
+    border: none;
+}
+
+th {
+    background: #0db9f0;
+    color: white;
+}
+table tr td {
+    vertical-align: middle;
+}
+
+.btn {
+    background: #0db9f0;
+    border-color: #0db9f0;
+}
+
+.comparison {
+    color:rgb(44, 16, 16);
+    font-size: 3rem;
+    align-items: center;
+    cursor:pointer;
+}
+
+.sliderclass {
+    margin-bottom: 2px;
+    padding-top: 10px;
+}
+
+.yellowclass {
+    color: yellow;
+}
+
+.nocolorclass {
+    color: none;
+}
+
+.backgroundColor {
+    background:#a3bcf9;
+}
+
+.form-inline {
+    padding-top: 25px;
+}
+
+.classred {
+    color: red;
+}
+
+.classgreen {
+    color: green;
+}
+
+@media screen and (max-width: 320px) {
+    h4 {
+       font-size: 1.2rem;
+    }
+}

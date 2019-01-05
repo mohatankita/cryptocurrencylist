@@ -1,0 +1,46 @@
+.aligntext {
+    text-align: center;
+}
+
+.faspace {
+    padding: 5px 20px;
+}
+
+.detailrow {
+    padding: 20px 5px 0;
+}
+
+.detailtext {
+    text-align: justify;
+    font-size: 13px;
+    padding-right: 40px;
+    color: #086788;
+}
+
+.detailhead {
+    font-weight: bold;
+}
+
+.nofontweight {
+    font-weight: normal;
+}
+
+.card-deck {
+    padding: 5px 15px;
+}
+
+.card-head {
+    font-weight: bold;
+}
+
+.bg-custom {
+    background: rgba(8, 103, 136, 0.6);
+    color: white;
+    -webkit-box-shadow: 0px 0px 5px 3px rgba(208,194,255,1);
+    -moz-box-shadow: 0px 0px 5px 3px rgba(208,194,255,1);
+    box-shadow: 0px 0px 5px 3px rgba(208,194,255,1);
+}
+
+h2 {
+    color: #dd1c1a; 
+}

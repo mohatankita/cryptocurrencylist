@@ -1,0 +1,79 @@
+<div class="row">
+  <div class="col-6 col-lg-6 col-md-6 col-sm-6">
+    <p class="sliderclass">Price Filter</p>
+    <ng5-slider [(value)]="priceminValue" [(highValue)]="pricemaxValue" [options]="priceoptions" (userChangeStart)="onUserChangeStart($event, 'price')"
+      (userChange)="onUserChange($event, 'price')" (userChangeEnd)="onUserChangeEnd($event, 'price')"></ng5-slider>
+  </div>
+  <div class="col-6 col-lg-6 col-md-6 col-sm-6">
+    <p class="sliderclass">Market Cap filter</p>
+    <ng5-slider [(value)]="marketminValue" [(highValue)]="marketmaxValue" [options]="marketoptions" (userChangeStart)="onUserChangeStart($event, 'market')"
+      (userChange)="onUserChange($event, 'market')" (userChangeEnd)="onUserChangeEnd($event, 'market')"></ng5-slider>
+  </div>
+</div>
+
+<div class="row">
+  <div class="col-6 col-lg-6 col-md-6 col-sm-6">
+    <!-- comparison button -->
+    <a (click)="comparecoins()" class="comparison" *ngIf="displaycheckbox"><button type="button" class="btn btn-primary btn-sm" *ngIf="count==2">Compare Coins</button></a>
+  </div>
+  <div class="col-6 col-lg-6 col-md-6 col-sm-6 search_div">
+    <form class="form-inline">
+      <i class="fa fa-search" aria-hidden="true"></i>
+      <input class="form-control form-control-sm ml-3 w-75" type="text" placeholder="Search" aria-label="Search">
+    </form>
+  </div>
+</div>
+
+<h4>Top Crypto Currencies List</h4>
+
+<div class="row">
+  <div class="col-lg-12 col-md-12">
+
+    <app-loader *ngIf="loading"></app-loader>
+
+    <div class="table-responsive" *ngIf="!loading">
+      <table class="table table-bordered table-hover">
+        <tr>
+          <th *ngIf="displaycheckbox" class="checkboxclass"></th>
+          <th>Favorite</th>
+          <th>Rank</th>
+          <th>Name</th>
+          <th><i (click)="displaymarketsort(direction='desc', value='marketcap')" class="fa fa-caret-down"></i>
+            Market Cap <i (click)="displaymarketsort(direction='asc')" class="fa fa-caret-up"></i></th>
+          <th><i (click)="displaysort(direction='desc', value='price')" class="fa fa-caret-down"></i> Price <i (click)="displaysort(direction='asc', value='price')"
+              class="fa fa-caret-up"></i></th>
+          <th>Volume (24h)</th>
+          <th>Circulating Supply</th>
+          <th>Change (24h)</th>
+          <th>Price Graph (24h)</th>
+        </tr>
+        <tr (press)="checkboxdisplay()" *ngFor="let currency of currencylistarray | paginate: { itemsPerPage:50, currentPage: p}; let i=index">
+          <td *ngIf="displaycheckbox">
+            <mat-checkbox (change)="checkvalue($event, value=currency.id)" class="example-margin"></mat-checkbox>
+          </td>
+          <td>
+            <a id="{{currency.id}}" (click)="addfavorite(id=currency.id)"><i class="fa fa-star" [ngClass]="checkingFav(currency.id)? 'yellowclass' : 'nocolorclass'"></i></a>&nbsp;&nbsp;
+            
+            <a id="{{currency.id}}" (click)="removefavorite(currency.id)? 'yellowclass' : 'nocolorclass'"><i class="fa fa-trash-o"></i></a>
+          </td>
+          <td>{{currency.market_cap_rank}}</td>
+          <td style="cursor:pointer"><a (click)="displaycoindetail($event, currency.id)">{{currency.name}}</a></td>
+          <td>${{currency.market_cap | number : '4.2-2'}}</td>
+          <td>${{currency.current_price | number : '2.2-2'}}</td>
+          <td>${{currency.total_volume | number : '4.2-2' }}</td>
+          <td>{{currency.circulating_supply | number : '4.2-2'}} <span class="hidden-xs">{{currency.symbol}}</span></td>
+          <td id="percentageChange" [ngClass]="currency.market_cap_change_percentage_24h > 0 ? 'classgreen' : 'classred'">{{currency.market_cap_change_percentage_24h | number : '1.2-2' }} %</td>
+          <td (click)="showpricepage($event, currency.id)">
+            <button type="button" class="btn btn-primary btn-sm">Price Graph</button>
+          </td>
+        </tr>
+        <tr>
+          <td colspan="12">
+            <pagination-controls class="my-pagination" (pageChange)="p = $event" previousLabel="Previous" nextLabel="Next"
+              maxSize="0" responsive="true"></pagination-controls>
+          </td>
+        </tr>
+      </table>
+    </div>
+  </div>
+</div>

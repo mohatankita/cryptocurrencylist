@@ -1,0 +1,155 @@
+.quicklook {
+  font-size: 0.8rem;
+  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+  font-weight: bold;
+  padding: 10px;
+  background-color: #dd1c1a;
+}
+
+.search_div {
+  padding: 12px 0;
+}
+
+h2 {
+  font-weight: bold;
+  font-family: 'Lucida Sans', 'Lucida Sans Regular', Verdana, sans-serif;
+}
+
+.row_border {
+  background-color: #086788;
+}
+
+header, header a:visited, header a:hover, header a:active{
+  color: white;
+}
+
+.currencybutton {
+  padding-top: 9px;
+  border: none;
+}
+
+.currencybackground {
+  background: #dd1c1a;
+  border: none;
+}
+
+.navlist {
+  padding: 0 15px;
+}
+
+@media screen and (max-width: 768px) {
+  .quicklook {
+    font-size: 0.7rem;
+  }
+
+h2 {
+  font-size: 0.8rem;
+    padding: 5px 0;
+    margin: 0;
+}
+.navlist {
+  padding: 0 4px;
+}
+.col-10 {
+  padding: 0 5px;
+}
+.col-2 {
+  padding: 0 10px;
+  margin: 0;
+}
+.navbar-nav {
+  padding: 0 5px;
+}
+.navlist {
+  padding: 0;
+}
+.currencybutton {
+  padding-top: 12px 15px;
+}
+}
+
+@media screen and (max-width: 601px) {
+  .quicklook {
+    font-size: 0.6rem;
+  }
+  .navbar-brand {
+    margin-left: 0;
+    padding-left: 5px;
+  }
+
+  .navbar-nav {
+    padding: 0 15px;
+  }
+
+  .navlist {
+    padding: 0 15px;
+  }
+
+  .currencybutton {
+    padding: 9px;
+  }
+}
+
+@media screen and (max-width: 576px) {
+  .quicklook {
+    font-size: 0.7rem;
+  }
+  .navbar {
+    padding: 0;
+  }
+
+  .navbar-nav {
+    flex-direction: row;
+    font-size: 0.9rem;
+  }
+
+  .currencybutton {
+    padding-top: 4px;
+  }
+}
+
+@media screen and (max-width: 768px) and (min-width: 481px) {
+  .navlist, .navbar-nav {
+    padding: 0 5px;
+  }
+}
+
+@media screen and (max-width: 320px) {
+  .col-10 {
+    padding: 0 5px;
+  }
+  .navbar-brand {
+    font-size: 0.8rem;
+    margin-right: 0;
+    margin-bottom: 5px;
+  }
+  .navbar-nav {
+    padding: 0;
+  }
+  .navlist {
+    padding: 0 5px;
+    font-size: 0.6rem;
+  }
+  .currencybackground {
+    padding: 1px 6px;
+  }
+  .currencybutton {
+    padding: 5px 0;
+  }
+  .col-2 {
+    padding: 0 2px 0 0;
+  }
+  h2 {
+    line-height: 1;
+  }
+}
+
+@media screen and (max-width: 480px) and (min-width: 241px) {
+  .navbar-nav {
+    padding: 0;
+  }
+  
+  .navlist {
+    padding: 0 5px;
+  }
+}

@@ -1,0 +1,86 @@
+<div [routerLink]="['/detail', cryptocurrencyDetail.id]">
+
+  <div class="row">
+    <div class="col-5 col-lg-5 col-md-5 col-sm-5 detailrow">
+      <div class="row">
+        <div class="col-12 col-lg-12 col-md-12 col-sm-12 aligntext">
+          <h2>{{ cryptocurrencyDetail.name }}</h2>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-12 col-lg-12 col-md-12 col-sm-12 aligntext">
+          <p class="detailhead"> Symbol:&nbsp;
+          <span class="nofontweight">{{cryptocurrencyDetail.symbol}}</span></p>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-12 col-lg-12 col-md-12 col-sm-12 aligntext">
+          <p class="detailhead"> Genesis Date:&nbsp;
+          <span class="nofontweight">{{cryptocurrencyDetail.genesis_date}}</span></p>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-12 col-lg-12 col-md-12 col-sm-12 aligntext">
+          <p class="detailhead">Website:&nbsp;
+            <span class="nofontweight">{{cryptocurrencyDetail.links.homepage[0]}}</span></p>
+          <p class="detailhead">BlockChain site:&nbsp;
+              <span class="nofontweight">{{cryptocurrencyDetail.links.blockchain_site[0]}}</span></p>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-12 col-lg-12 col-md-12 col-sm-12 aligntext">
+          <i class="fa fa-facebook faspace">&nbsp;{{cryptocurrencyDetail.community_data.facebook_likes}}</i>
+          &nbsp;
+          <i class="fa fa-reddit faspace">&nbsp;{{cryptocurrencyDetail.community_data.reddit_subscribers}}</i>
+          &nbsp;
+          <i class="fa fa-twitter faspace">&nbsp;{{cryptocurrencyDetail.community_data.twitter_followers}}</i>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-7 col-lg-7 col-md-7 col-sm-7 detailrow">
+      <div class="row">
+        <div class="col-12 col-lg-12 col-md-12 col-sm-12 detailtext">
+          <p>{{ cryptocurrencyDetail.description.en }}</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-12 col-lg-12 col-sm-12 col-md-12 aligntext">
+      <div class="card-deck">
+        <div class="card bg-custom">
+          <div class="card-body text-center">
+            <p class="card-text card-head">Market Cap</p>
+            <p class="card-text">${{cryptocurrencyDetail.market_data.market_cap.usd}}</p>
+          </div>
+        </div>
+        <div class="card bg-custom">
+          <div class="card-body text-center">
+            <p class="card-text card-head">Price</p>
+            <p class="card-text">${{cryptocurrencyDetail.market_data.current_price.usd}}</p>
+          </div>
+        </div>
+        <div class="card bg-custom">
+          <div class="card-body text-center">
+            <p class="card-text card-head">Circulating Supply</p>
+            <p class="card-text">{{cryptocurrencyDetail.market_data.circulating_supply}}</p>
+          </div>
+        </div>
+        <div class="card bg-custom">
+          <div class="card-body text-center">
+            <p class="card-text card-head">Total Volume</p>
+            <p class="card-text">{{cryptocurrencyDetail.market_data.total_volume.usd}}</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-12 col-lg-12 col-md-12 col-sm-12">
+      <price-view></price-view>
+    </div>
+  </div>
+</div>
