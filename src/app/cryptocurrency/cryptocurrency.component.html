@@ -31,8 +31,7 @@
 
     <app-loader *ngIf="loading"></app-loader>
 
-    <div class="table-responsive" *ngIf="!loading">
-      <table class="table table-bordered table-hover">
+      <table class="table table-bordered table-hover table-responsive" *ngIf="!loading">
         <tr>
           <th *ngIf="displaycheckbox" class="checkboxclass"></th>
           <th>Favorite</th>
@@ -74,6 +73,5 @@
           </td>
         </tr>
       </table>
-    </div>
   </div>
 </div>

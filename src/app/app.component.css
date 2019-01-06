@@ -23,6 +23,10 @@ header, header a:visited, header a:hover, header a:active{
   color: white;
 }
 
+.navlist .navlist a:visited, .navlist a:hover, .navlist a:active {
+  color: white;
+}
+
 .currencybutton {
   padding-top: 9px;
   border: none;

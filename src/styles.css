@@ -5,6 +5,14 @@
 
 @import '~ngx-toastr/toastr.css';
 
+body {
+    overflow: -webkit-paged-y;
+}
+
 #toast-container > div {
     opacity:1;
+}
+
+.toast-container {
+    position: absolute;
 }
